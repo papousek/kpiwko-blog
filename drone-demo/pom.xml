@@ -380,7 +380,7 @@
                                 <phase>test</phase>
                                 <configuration>
                                     <systemPropertyVariables>
-                                        <arquillian.xml>arquillian-ff9.xml</arquillian.xml>                                        
+                                        <arquillian.xml>arquillian-ff9.xml</arquillian.xml>
                                     </systemPropertyVariables>
                                     <reportNameSuffix>ff9</reportNameSuffix>
                                 </configuration>
@@ -428,6 +428,31 @@
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
+                    <plugin>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-installed</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>copy</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>org.richfaces.examples</groupId>
+                                            <artifactId>richfaces-showcase</artifactId>
+                                            <type>war</type>
+                                            <version>4.2.1-SNAPSHOT</version>
+                                            <classifier>openshift</classifier>
+                                            <destFileName>showcase.war</destFileName>
+                                        </artifactItem>
+                                    </artifactItems>
+                                    <outputDirectory>target</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
             </build>
 
@@ -435,7 +460,7 @@
                 <dependency>
                     <groupId>org.jboss.arquillian.container</groupId>
                     <artifactId>arquillian-openshift-express</artifactId>
-                    <version>1.0.0.Alpha1</version>
+                    <version>1.0.0.Alpha2</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>

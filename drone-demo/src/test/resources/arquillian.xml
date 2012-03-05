@@ -15,18 +15,18 @@
     <container qualifier="jboss" default="true">
         <!-- If you want to use the JBOSS_HOME environment variable, just delete the jbossHome property -->
         <configuration>
-            <property name="jbossHome">/home/kpiwko/jboss-as-7.1.0.CR1b</property>
+            <property name="jbossHome">/opt/jboss-as-7.1.0.Final/</property>
         </configuration>
     </container>
 
     <container qualifier="openshift">
         <configuration>
-            <property name="namespace">arqtest</property>
-            <property name="application">drone</property>
-            <property name="sshUserName">2a15cbe193da441f9f3a9aa4039695b1</property>
+            <property name="namespace">richfacesqa</property>
+            <property name="application">ftest</property>
+            <property name="sshUserName">dc5eed1b78e64b4db3be3c67b2d64cb7</property>
             <!-- Passphrase can be specified by defining the environment variable SSH_PASSPHRASE -->
-            <!-- <property name="passphrase"></property> -->
-            <property name="login">kpiwko@redhat.com</property>
+            <property name="passphrase">ReallyStrongPassword</property>
+            <property name="login">richfaces.qa.jenkins@gmail.com</property>
         </configuration>
     </container>
 
