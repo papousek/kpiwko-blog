@@ -15,7 +15,7 @@
     <container qualifier="jboss" default="true">
         <!-- If you want to use the JBOSS_HOME environment variable, just delete the jbossHome property -->
         <configuration>
-            <property name="jbossHome">/opt/jboss-as-7.1.0.Final/</property>
+<!--             <property name="jbossHome">/opt/jboss-as-7.1.0.Final/</property> -->
         </configuration>
     </container>
 
@@ -25,8 +25,9 @@
             <property name="application">ftest</property>
             <property name="sshUserName">dc5eed1b78e64b4db3be3c67b2d64cb7</property>
             <!-- Passphrase can be specified by defining the environment variable SSH_PASSPHRASE -->
-            <property name="passphrase">ReallyStrongPassword</property>
+            <property name="passphrase">${openshift.key.password}</property>
             <property name="login">richfaces.qa.jenkins@gmail.com</property>
+            <property name="deploymentTimeoutInSeconds">120</property>
         </configuration>
     </container>
 

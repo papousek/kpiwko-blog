@@ -20,6 +20,7 @@
 
         <version.selenium>2.20.0</version.selenium>
         <version.selenium.server>2.20.0</version.selenium.server>
+        <openshift.key.password></openshift.key.password>
     </properties>
 
     <dependencyManagement>
@@ -425,6 +426,7 @@
                         <configuration>
                             <systemPropertyVariables>
                                 <arquillian.launch>openshift</arquillian.launch>
+                                <openshift.key.password>${openshift.key.password}</openshift.key.password>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
